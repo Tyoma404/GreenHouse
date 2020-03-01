@@ -1,0 +1,208 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+/* Ещё один фон:  background:  url(https://w-dog.ru/wallpapers/15/14/426101354778559.jpg);  */
+  background: url(https://wallbox.ru/wallpapers/preview/201727/1499165867595b74aba74679.84163830.jpg);
+}
+
+#main_container {
+  display: block;
+}
+
+#shapka {
+  display: flex;
+  text-align: center; 
+  height: 70px;
+  border-radius: 15px;
+  background: rgba(255, 255, 268, 0.9); 
+/*   background: rgba(102, 255, 153, 0.8); */
+  padding: 15px; 
+}
+
+#brand{
+  margin: 0px 40px 20px 30px;
+  font-size: 20pt;
+  font-family: "Monaco", "Courier", monospace;
+  font-weight: bold;  
+}
+
+.major_c{
+  font-size: 130%; 
+  margin: 10px;  
+  width:1200px;
+/*     background: rgba(204, 204, 268, 0.8);  */
+  background: rgba(255, 255, 268, 0.9); 
+  color: black; 
+  padding: 15px; 
+  border-radius: 15px;  
+}
+
+.navigator{
+  color: black;
+  margin: 5px 30px;
+}
+
+#sost{
+  background-color: rgba(204, 204, 268, 0.9);
+  color: black; /* Цвет текста */
+  padding: 15px; 
+  border-radius: 15px; 
+  border: 3px solid black;  
+}
+
+#inputGroup-sizing-default{
+  color: black;
+  background-color: rgb(204, 204, 268); 
+}
+
+#avalInput{
+  border: 1px solid black;
+}
+
+#tempInputHigh{
+ border: 1px solid black; 
+}
+
+#tempInputLow{
+ border: 1px solid black; 
+}
+
+#flexSost{
+  display: flex; 
+/* flex-direction: column;  */
+/*  flex-wrap: wrap; 
+ align-items: center;   */
+/*  width: 700px; */
+}
+
+#grafic{
+  display: flex
+}
+
+.temper{
+   border:5px ridge #42aaff;
+/*   padding: 5px; */
+  margin-left: 30px;
+}
+
+#manualDiv{
+  background-color: rgba(204, 204, 268, 0.9);
+  color: black;
+  padding: 15px;
+  border-radius: 15px;  
+  border: 3px solid black;
+}
+
+#avalInput{
+   width: 650px;
+}
+
+#tempInputHigh{
+   width: 650px;
+}
+
+#tempInputLow{
+   width: 650px;
+}
+
+#righter{
+/*   text-align: center; */
+/*   align-self: center;
+  */
+ align-items: right;
+}
+
+
+/*Может пригодиться 
+#clk{
+color:#F0E68C;
+ size:50px;
+}
+
+input[type=range]
+{
+-webkit-appearance: none;
+    margin-top:25px;
+border-radius:5px;
+  background-color:	#eedc82;
+height: 10px;
+  
+}
+input[type=range]::-webkit-slider-thumb {
+-webkit-appearance: none;
+background-color: #4e1609;
+border: 5px solid #1e90ff;
+width: 20px;
+height: 30px;
+border-radius: 20px;
+cursor: pointer;
+} */
+
+
+/* Настройки топера */
+#myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 50px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: solid black; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: rgba(244, 80, 242, 1); /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 20px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: red; /* Add a dark-grey background on hover */
+}
+
+/*Настройки галереи*/
+
+#photos {
+  position: relative;
+  height: 850px; 
+}
+
+#photos img {
+  position: absolute;
+  height: 800px; 
+  width: 100%;
+  left: 0;
+  opacity: 0; /*неактивные фотки становятся прозрачными(исчезают) плавно за 1 секунду */
+  transition: opacity 1s;
+}
+
+#photos img.active {
+  opacity: 1;   
+}
+
+#buttonsForSlider{
+  text-align: center;
+}
+
+#prev:hover{
+  color: red;
+  box-shadow: 4px 4px crimson;
+}
+
+#next:hover{
+  color: red;
+  box-shadow: 4px 4px crimson; 
+}
+/*Конец настроек галереи*/
+
+button:hover{
+  color: red;
+  box-shadow: 4px 4px crimson;
+}
+
+#footer{
+  margin-bottom: 0;
+  font-size: 15px;
+}

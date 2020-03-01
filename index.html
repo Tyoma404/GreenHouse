@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - GreenHouse2.0</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+  <head>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top↑</button> 
+  </head>
+<body>
+<div id="main_container">
+  <div id="shapka">  
+<!-- <div id="brand"><img  src="http://logotipka.su/images/stories/skachat_img/knopki/houses5.png" width="50" height="50">GreenHouse</div>  -->
+    <div id="brand"><img  src="https://icons8.com/iconizer/files/Juicy_Fruit/orig/home.png" width="50" height="50">GreenHouse</div>  
+    <nav class="nav">
+      <a class="navigator" href="#Gallery">Галерея</a>
+      <a class="navigator" href="#Opisanie">Описание и характеристики устройства</a>
+      <a class="navigator" href="#panel">Панель управления</a>
+      <a class="navigator" href="#State">Статистика</a>
+    </nav> 
+   
+  </div> 
+  
+  <div class="major_c">  
+    <h2>Добро пожаловать на сайт проекта "GreenHouse"!</h2>
+    <p><strong>"GreenHouse"</strong> - это современное IoT - устройство, работающее под управлением микроконтроллера WeMos D1 R1.</p>
+    <h3>Что же такое IoT - технологии и IoT - устройства?</h3>
+  <p>ййййцвсьывсывьсдльвсьвсльсдльвылдсь
+  в
+  в
+  в
+  в
+  в
+  в
+  
+  вввввввввывыывсвысывсвысвысвысвысвысывсвы
+  сывсысысвысывсывсысысывсысывсвысысысысвыссвысывсысысывсыв
+  сывсывсывсывсвысвысвысывс
+  ывсвысывсвысы
+  
+  ывсывсысывсывсывсывсывсывсысы
+    </p>
+  </div> 
+  
+  <div class="major_c">
+    <h2 id="Gallery">Галерея</h2>
+     
+    <br>
+         
+      <div id="photos">
+        <img src="https://thumbs2.tunefiles.com/98,0317957af6b7dc3d.jpg">
+        <img src="https://pp.userapi.com/c849320/v849320768/fca10/_cwMBfrz8Xg.jpg">
+        <img src="https://bipbap.ru/wp-content/uploads/2017/12/0f92147ad2284aae418b40faf24dc68902960019_hq-640x456.jpg">
+        <img src="https://st2.depositphotos.com/4256003/9442/i/950/depositphotos_94426252-stock-photo-gentle-portrait-tiger-computer-collage.jpg">
+        <img src="https://i.ytimg.com/vi/Z_zd0sinCw8/maxresdefault.jpg"> 
+     
+      </div>
+         
+      <div id="buttonsForSlider">
+        <input type="button" value="Назад" id="prev"> 
+        <input type="button" data-name="0" value="рис 1" class="buttons">
+        <input type="button" data-name="1" value="рис 2" class="buttons">
+        <input type="button" data-name="2" value="рис 3" class="buttons">
+        <input type="button" data-name="3" value="рис 4" class="buttons"> 
+        <input type="button" data-name="4" value="рис 5" class="buttons">
+        <input type="button" value="Вперед" id="next">
+      </div> 
+         
+     
+  </div> 
+  
+  <div class="major_c">
+    <h2 id="Opisanie">Описание и технические характеристики GreenHouse:</h2>
+      <p></p>
+      <p></p>
+  </div>
+  
+  <div class="major_c">
+    <h2 id="panel">Панель управления устройством</h2>
+    <br>
+      <button id="connect_btn" type="button" class="btn btn-success">Подключиться</button> 
+      <button id="avalue_btn" type="button" class="btn btn-success">Узнать влажность почвы</button>
+      <button id="dht_btn" type="button" class="btn btn-success">Узнать температуру и влажность воздуха</button>
+    <br><br>
+    <div id="manualDiv">
+      <h3>Ручное управление</h3>
+        <button id="m_btn" type="button" class="btn btn-success">Вкл/выкл ручной режим</button>   
+        <button id="poliv_btn" type="button" class="btn btn-success">Вкл/выкл полив</button> 
+        <button id="light_btn" type="button" class="btn btn-success">Вкл/выкл свет</button>
+        <button id="window_btn" type="button" class="btn btn-success">Открыть/закрыть окно</button>       
+    </div>
+    <br>
+    <h3 id="connection">Состояние подключения: НЕ ПОДКЛЮЧЕНО</h3>
+    <br>
+    <div id="sost">
+      <h3>Текущее состояние оранжереи:</h3>
+      <div id="flexSost">
+        <div id="lefter">  
+          <div>Режим управления:</div>
+          <div>Влажность почвы:</div>
+          <div>Температура воздуха:</div>
+          <div>Влажность воздуха:</div>
+          <div>Состояние полива:</div>
+          <div>Состояние подсветки:</div>
+          <div>Положение окна:</div>
+        </div>  
+        <div id="righter">  
+          <div id="regim">auto </div>
+          <div id="aval">-Не определенно- </div>
+          <div id="temp">-Не определенно-</div>
+          <div id="hum">-Не определенно- </div>  
+          <div id="polivSost">-Не определенно- </div>    
+          <div id="svetSost">-Не определенно- </div> 
+          <div id="oknoSost">-Не определенно- </div> 
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <h3>Ввод новых настроек</h3><br>
+    <div id="avalInput" class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Нижний барьер влажности почвы</span>
+    </div>
+    <input type="text" class="form-control" aria-label="Default" placeholder="Введите число от 1 до 1024" aria-describedby="inputGroup-sizing-default" id="avalControl">
+    </div>
+    <div id="tempInputHigh" class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Верхний барьер температуры воздуха</span>
+      </div>
+        <input type="text" class="form-control" aria-label="Default" placeholder="Введите число градусов Цельсия" aria-describedby="inputGroup-sizing-default" id="tempControlHigh">
+    </div>
+    <div id="tempInputLow" class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Нижний барьер температуры воздуха</span>
+      </div>
+        <input type="text" class="form-control" aria-label="Default" placeholder="Введите число градусов Цельсия" aria-describedby="inputGroup-sizing-default" id="tempControlLow">
+    </div>  
+    <button id="send_btn" type="button" class="btn btn-success">Отправить новые данные</button> <br>
+  </div>
+
+  <div class="major_c">
+    <h3 id="State">Статистика</h3> 
+    <br>
+    <div id="grafic">
+      <div class="temper">1</div>
+      <div class="temper">2</div>
+      <div class="temper">3</div>
+      <div class="temper">4</div>
+      <div class="temper">5</div>
+      <div class="temper">6</div>
+      <div class="temper">7</div>
+      <div class="temper">8</div>
+      <div class="temper">9</div>
+      <div class="temper">10</div>
+    </div>
+  </div>
+
+<!-- <input id="range" type="range" value="1" step="1" min="1" max="50" list="rangeList" onchange="document.getElementById('rangeValue').innerHTML = this.value;">
+<datalist id="rangeList">
+</datalist>
+<span id="rangeValue">1</span> -->
+
+  <div class="major_c" id="footer">
+  Copyright Tyoma_coder, 2020
+    <div id="footer_right">
+      <a href="">Обратная связь</a>
+    </div>
+  </div> 
+</div>
+</body>
+</html>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
