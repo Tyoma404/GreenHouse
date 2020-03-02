@@ -197,11 +197,13 @@ cursor: pointer;
 }
 /*Конец настроек галереи*/
 
+
 button:hover{
   color: red;
   box-shadow: 4px 4px crimson;
 }
 
+/*Настройка футера*/
 #footer{
   margin-bottom: 0;
   font-size: 15px;

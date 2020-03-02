@@ -137,7 +137,7 @@ send_btn.addEventListener("click", () =>{
 avalControl = parseInt(avalControl.value, 10); 
 tempControlHigh = parseInt(tempControlHigh.value, 10);
 tempControlLow = parseInt(tempControlLow.value, 10);
-console.log("Данные в обработке...");  
+console.log("Данные обабатываются...");  
 if (avalControl != 0)  {
 Send("pompa", avalControl);
 avalControl == 0;}
