@@ -7,6 +7,10 @@ body{
   background: url(https://wallbox.ru/wallpapers/preview/201727/1499165867595b74aba74679.84163830.jpg);
 }
 
+p {
+  text-indent: 20px; /* Отступ первой строки в пикселах */
+ }
+
 #main_container {
   display: block;
 }
@@ -186,6 +190,11 @@ cursor: pointer;
   text-align: center;
 }
 
+.buttons:hover{
+  color: red;
+  box-shadow: 4px 4px crimson;
+}
+
 #prev:hover{
   color: red;
   box-shadow: 4px 4px crimson;
@@ -207,4 +216,9 @@ button:hover{
 #footer{
   margin-bottom: 0;
   font-size: 15px;
+}
+
+/*Настройки авторизации*/
+#loginField{
+  opacity: 0;
 }

@@ -2,17 +2,21 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - GreenHouse2.0</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" href="./style.css">
-
+  <title>Green house</title>
+  <link rel="shortcut icon" href="https://icons8.com/iconizer/files/Juicy_Fruit/orig/home.png" type="image/png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
+
 <html>
   <head>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top↑</button> 
   </head>
 <body>
+ <div id="loginField">
+   <!--Здесь будет сделана авторизация-->
+ </div> 
 <div id="main_container">
   <div id="shapka">  
 <!-- <div id="brand"><img  src="http://logotipka.su/images/stories/skachat_img/knopki/houses5.png" width="50" height="50">GreenHouse</div>  -->
@@ -29,22 +33,20 @@
   <div class="major_c">  
     <h2>Добро пожаловать на сайт проекта "GreenHouse"!</h2>
     <p><strong>"GreenHouse"</strong> - это современное IoT - устройство, работающее под управлением микроконтроллера WeMos D1 R1.</p>
-    <h3>Что же такое IoT - технологии и IoT - устройства?</h3>
-  <p>ййййцвсьывсывьсдльвсьвсльсдльвылдсь
-  в
-  в
-  в
-  в
-  в
-  в
-  
-  вввввввввывыывсвысывсвысвысвысвысвысывсвы
-  сывсысысвысывсывсысысывсысывсвысысысысвыссвысывсысысывсыв
-  сывсывсывсывсвысвысвысывс
-  ывсвысывсвысы
-  
-  ывсывсысывсывсывсывсывсывсысы
-    </p>
+    <h3>Что же такое IoT - технологии?</h3>
+  <p><strong>Интернет вещи</strong> (Internet of Things — IoT) включают в себя сразу несколько явлений. 
+    Это сами устройства, которые вышли в сеть и взаимодействуют между собой. 
+    Это и способ подключения – M2M – то есть машины-к-машине, без участия человека. 
+    Это и большие данные, которые теперь генерируют устройства. Данные, которые можно (и нужно) собирать, анализировать
+    и в дальнейшем использовать для повышения комфорта или принятия бизнес-решений.</p>
+
+    <p>По одному из определений, с точки зрения IoT, «вещь» – любой реальный или виртуальный объект, 
+    который существует и перемещается в пространстве и времени и может быть однозначно определен
+    (интересно, кстати, как виртуальный объект перемещается в пространстве?:)).</p>
+
+    <q>IоT — концепция пространства, в котором все из аналогового и цифрового миров может быть совмещено 
+      – это переопределит наши отношения с объектами, а также свойства и суть самих объектов.</q>
+      <cite> © Роб Ван Краненбург</cite>
   </div> 
   
   <div class="major_c">
@@ -167,15 +169,13 @@
 
   <div class="major_c" id="footer">
   Copyright Tyoma_coder, 2020
-    <div id="footer_right">
-      <a href="">Обратная связь</a>
-    </div>
   </div> 
 </div>
 </body>
 </html>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js'></script><script  src="./script.js"></script>
+<!--Подключение скриптов:-->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js'></script>
+  <script src="./script.js"></script>
 
 </body>
 </html>

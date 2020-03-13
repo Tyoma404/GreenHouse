@@ -59,7 +59,6 @@ var isManualControl = 0;
 var isPolivControl = 0;
 var isLightControl = 0;
 var isWindowControl = 0;
-//КОНЕЦ ПЕРЕМЕННЫХ
 
 // var r
 //  function timer() {
@@ -83,36 +82,36 @@ console.log("Ручной режим включен");}
 
 window_btn.addEventListener("click", () =>{
 if (isWindowControl == 1)  {
-Send("okno_m", "close");
+Send("manual", "okno_close");
 isWindowControl = 0;
 console.log("Окно закрыли");}
   else
 if (isWindowControl == 0)  {
-Send("okno_m", "open");
+Send("manual", "okno_open");
 isWindowControl = 1;
 console.log("Окно открыли");}
 });
   
 light_btn.addEventListener("click", () =>{
 if (isLightControl == 1)  {
-Send("svet_m", "off");
+Send("manual", "svet_off");
 isLightControl = 0;
 console.log("Свет выключили");}
   else
 if (isLightControl == 0)  {
-Send("svet_m", "on");
+Send("manual", "svet_on");
 isLightControl = 1;
 console.log("Свет включили");}
 });
 
 poliv_btn.addEventListener("click", () =>{
 if (isPolivControl == 1)  {
-Send("pompa_m", "off");
+Send("manual", "pompa_off");
 isPolicControl = 0;
 console.log("Полив выключили");}
   else
 if (isPolivControl == 0)  {
-Send("pompa_m", "on");
+Send("manual", "pompa_on");
 isPolivControl = 1;
 console.log("Полив включили");} 
 });
@@ -124,7 +123,8 @@ avalue_btn.addEventListener("click", () =>{
 });
 
 dht_btn.addEventListener("click", () =>{
-  Send("DHT", "info");
+  Send("infoT", "info");
+  Send("infoH", "info");
   console.log("Запрос на данные DHT отправлен");
  //   nul.shift()
  //   nul.push("jj");
@@ -139,13 +139,13 @@ tempControlHigh = parseInt(tempControlHigh.value, 10);
 tempControlLow = parseInt(tempControlLow.value, 10);
 console.log("Данные обабатываются...");  
 if (avalControl != 0)  {
-Send("pompa", avalControl);
+Send("humMin", avalControl);
 avalControl == 0;}
 if (tempControlHigh != 0)  {
-Send("oknoHigh", tempControlHigh);
+Send("tempHigh", tempControlHigh);
 tempControlHigh = 0;} 
 if (tempControlLow != 0)  {
-Send("oknoLow", tempControlLow);
+Send("tempLow", tempControlLow);
 tempControlLow = 0;}  
 console.log("Данные отправлены");
 });
@@ -157,27 +157,21 @@ connection.innerHTML="Состояние: ПОДКЛЮЧАЕМСЯ..."} );
 //ТОПИКИ, НА КОТОРЫЕ ПОДПИСАНЫ:
 function onConnect() {
   client.subscribe("manual");  
-  client.subscribe("okno_m");  
-  client.subscribe("svet_m");  
-  client.subscribe("pompa_m");  
-  client.subscribe("pompa");
-  client.subscribe("pompa_otv");
-  client.subscribe("svet_otv"); 
-  client.subscribe("oknoHigh");
-  client.subscribe("oknoLow");
-  client.subscribe("okno_otv");
-  client.subscribe("DHT");
-  client.subscribe("DHT/get1");
-  client.subscribe("DHT/get2");    
+  client.subscribe("humMin");
+  client.subscribe("tempHigh");
+  client.subscribe("tempLow");
+  client.subscribe("infoH"); 
+  client.subscribe("infoT");
+  client.subscribe("answer");   
   client.subscribe("avalue");
-  client.subscribe("avalue/get");
   client.subscribe("/feeder");
   client.subscribe("/feeder_graf");
+
     connection.innerHTML="Состояние: ПОДКЛЮЧИЛИСЬ..."
     Send("/feeder", "Клиент (сайт) подключился к брокеру MQTT-сообщений");
-//КОНЕЦ КНОПОК
-  
-//ПЕРЕПОДКЛЮЧЕНИЕ:
+
+    
+//ФУНКЦИЯ ПЕРЕПОДКЛЮЧЕНИЕ:
   }
  function onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
@@ -188,7 +182,7 @@ function onConnect() {
 function doFail(e){
     console.log(e);
   }
-//КОНЕЦ ПЕРЕПОДКЛЮЧЕНИЯ
+
 
 //КОГДА ЧТО-ТО ПРИХОДИТ:
 function onMessageArrived(message) {
@@ -196,7 +190,6 @@ function onMessageArrived(message) {
     //mqttMess.innerHTML += `\<br>`+message.destinationName + '  ' + message.payloadString;
     switch (message.destinationName) {
       case "/feeder":
-       
         console.log(message.payloadString)
         break;
         
@@ -211,38 +204,60 @@ function onMessageArrived(message) {
 //    }
         // break;
         
-         case "avalue/get":
-       aval.innerHTML= message.payloadString;
-        console.log(message.payloadString)
+      case "avalue":
+        if (message.payloadString != "info"){
+          aval.innerHTML= message.payloadString;
+          console.log("Влажность почвы: " + message.payloadString)}
         break;
         
-         case "DHT/get1":
-       temp.innerHTML= message.payloadString + "°С";
-        console.log(message.payloadString)
-        break;   
-        
-         case "DHT/get2":
-       hum.innerHTML= message.payloadString + "%";
-        console.log(message.payloadString)
+      case "infoT":
+        if (message.payloadString != "info"){ 
+          temp.innerHTML= message.payloadString + "°С";
+          console.log("Температура воздуха" + message.payloadString)}
         break; 
         
-         case "pompa_otv":
-       polivSost.innerHTML= message.payloadString;
-        console.log(message.payloadString)
-        break;
+      case "infoH":
+        if (message.payloadString != "info"){ 
+          hum.innerHTML= message.payloadString + "%";
+          console.log("Влажность воздуха" + message.payloadString)}
+        break; 
         
-         case "svet_otv":
-       svetSost.innerHTML= message.payloadString;
-        console.log(message.payloadString)
-        break;
+      case "answer":
+        switch (message.payloadString) {
+          case "okno_open":
+            oknoSost.innerHTML= "Открыто";
+            console.log(message.payloadString)
+            break; 
         
-         case "okno_otv":
-       oknoSost.innerHTML= message.payloadString;
-        console.log(message.payloadString)
-        break;        
+          case "okno_close":
+            oknoSost.innerHTML= "Закрыто";
+            console.log(message.payloadString)
+            break; 
+
+          case "svet_on":
+            svetSost.innerHTML= "Включено";
+            console.log(message.payloadString)
+            break; 
         
+          case "svet_off":
+            svetSost.innerHTML= "Выключено";
+            console.log(message.payloadString)
+            break;
+
+          case "pompa_on":
+            polivSost.innerHTML= "Включено";
+            console.log(message.payloadString)
+            break; 
         
-        
+          case "pompa_off":
+            polivSost.innerHTML= "Выключено";
+            console.log(message.payloadString)
+            break;
+
+        default:
+          break;
+        }
+
       default:
         break;
     }
@@ -255,9 +270,7 @@ function Send(topic,body) {
 }
 
 
-
 //НАСТРОЙКА СЛАЙДЕРА:
-
 var btn_prev = document.querySelector('#prev');  /* отбирает всегда самый первый элемент, удовлетворяющий css-селектору */
 var btn_next = document.querySelector('#next');
 var firstPicture = document.querySelector("#photos > img:first-child");
