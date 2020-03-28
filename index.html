@@ -14,9 +14,76 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top↑</button> 
   </head>
 <body>
- <div id="loginField">
-   <!--Здесь будет сделана авторизация-->
+
+ <div class="major_c" id="loginFieldPlace">
+  <div id="firstDiv"><p>Выберите</p> 
+    <input type="button" value="Зарегистрироваться" id="sign_choice">   
+    <input type="button" value="Тестовый аккаунт" id="login_choice">   
+    <input type="button" value="Авторизироваться" id="signIn_choice">  
+    </div>
+    
+    <div id="signup">
+      <p>Введите адресс эл.почты и дважды желаемый пароль</p>
+      <form method="post" action="/login/">
+        <table>
+            <tr>
+                <td><label for="signupField">Электронная почта</label></td>
+                <td><input id="signupField" type="text" name="signup"></td>
+            </tr>
+            <tr>
+                <td><label for="passwordSignField">Пароль</label></td>
+                <td><input id="passwordSignField" type="password" name="passwordSign"></td>
+            </tr>
+            <tr>
+              <td><label for="passwordSignField1">Повтор пароля</label></td>
+              <td><input id="passwordSignField1" type="password" name="passwordSign1"></td>
+          </tr>
+        </table>
+    </form>
+    <br>
+    <input type="button" value="Зарегистрироваться" id="sign_btn">
+    </div> 
+    
+    <div id="signIn">
+      <p>Введите ваш логин и пароль</p>
+      <form method="post" action="/login/">
+        <table>
+            <tr>
+                <td><label for="signInField">Логин</label></td>
+                <td><input id="signInField" type="text" name="signIn"></td>
+            </tr>
+            <tr>
+                <td><label for="passwordSignInField">Пароль</label></td>
+                <td><input id="passwordSignInField" type="password" name="passwordSignIn"></td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <input type="button" value="Авторизироваться" id="signIn_btn">
+    </div> 
+    
+    <div id="login">
+      <p>Введите тестовый логин и пароль:</p>
+      <form method="post" action="/login/">
+        <table>
+            <tr>
+                <td><label for="loginField">Логин</label></td>
+                <td><input id="loginField" type="text" name="login"></td>
+            </tr>
+            <tr>
+                <td><label for="passwordField">Пароль</label></td>
+                <td><input id="passwordField" type="password" name="password"></td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <input type="button" value="Показать пример" id="log_btn">
+    <br>
+    <div id="loginSost"></div>
+    </div> 
+  <button id="logOut_btn">Выход</button>
  </div> 
+
 <div id="main_container">
   <div id="shapka">  
 <!-- <div id="brand"><img  src="http://logotipka.su/images/stories/skachat_img/knopki/houses5.png" width="50" height="50">GreenHouse</div>  -->
@@ -171,16 +238,15 @@
 <datalist id="rangeList">
 </datalist>
 <span id="rangeValue">1</span> -->
-
-  <div class="major_c" id="footer">
-  Copyright Tyoma_coder, 2020
-  </div> 
+ 
 </div>
+<footer id="footer">
+  <div id="footer-author">Copyright Tyoma_coder, 2020</div>
+  </footer> 
 </body>
 </html>
 <!--Подключение скриптов:-->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js'></script>
   <script src="./script.js"></script>
-
 </body>
 </html>
