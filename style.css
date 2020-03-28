@@ -12,7 +12,7 @@ p {
  }
 
 #main_container {
-  display: block;
+  display: inline-block;
 }
 
 #shapka {
@@ -204,6 +204,7 @@ cursor: pointer;
   color: red;
   box-shadow: 4px 4px crimson; 
 }
+
 /*Конец настроек галереи*/
 
 
