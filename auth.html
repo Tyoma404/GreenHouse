@@ -1,0 +1,46 @@
+<!--Регистрация-->   
+      <div id="signup">
+        <p>Введите адресс эл.почты и дважды желаемый пароль</p>
+        <form method="post" action="/login/">
+          <table>
+              <tr>
+                  <td><label for="signupField">Электронная почта</label></td>
+                  <td><input id="signupField" type="text" name="signup" required></td>
+              </tr>
+              <tr>
+                  <td><label for="passwordSignField">Пароль</label></td>
+                  <td><input id="passwordSignField" type="password" name="passwordSign" required></td>
+              </tr>
+              <tr>
+                <td><label for="passwordSignField1">Повтор пароля</label></td>
+                <td><input id="passwordSignField1" type="password" name="passwordSign1" required></td>
+            </tr>
+          </table>
+      </form>
+      <br>
+      <input type="button" value="Зарегистрироваться" id="sign_btn">
+      </div> 
+      
+<!--Авторизация-->      
+      <div id="signin">
+        <p>Введите ваш логин и пароль</p>
+        <form method="post" action="/login/">
+          <table>
+              <tr>
+                  <td><label for="signInField">Логин</label></td>
+                  <td><input id="signInField" type="text" name="signIn"></td>
+              </tr>
+              <tr>
+                  <td><label for="passwordSignInField">Пароль</label></td>
+                  <td><input id="passwordSignInField" type="password" name="passwordSignIn"></td>
+              </tr>
+          </table>
+      </form>
+      <br>
+      <input type="button" value="Авторизироваться" id="signIn_btn">
+      </div> 
+     
+<!--Выход-->  
+<div id="logout">    
+    <button id="logOut_btn">Выход</button>
+</div>

@@ -231,8 +231,5 @@ button:hover{
 /*Конец настроек футера*/
 
 
-/*Настройки авторизации*/
-#loginFieldPlace{
-  opacity: 0;
-  position: absolute;
-}
+
+
