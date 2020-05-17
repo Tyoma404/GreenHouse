@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Green house</title>
-  <link rel="shortcut icon" href="https://icons8.com/iconizer/files/Juicy_Fruit/orig/home.png" type="image/png">
+  <link rel="shortcut icon" href="./images/logo.png" type="image/png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
 
@@ -16,8 +16,7 @@
 <body>
 <div id="main_container">
   <div id="shapka">  
-<!-- <div id="brand"><img  src="http://logotipka.su/images/stories/skachat_img/knopki/houses5.png" width="50" height="50">GreenHouse</div>  -->
-    <div id="brand"><img  src="https://icons8.com/iconizer/files/Juicy_Fruit/orig/home.png" width="50" height="50">GreenHouse</div>  
+    <div id="brand"><img  src="./images/logo.png" width="50" height="50">GreenHouse</div>  
     <nav class="nav">
       <a class="navigator" href="#Gallery">Галерея</a>
       <a class="navigator" href="#Opisanie">Описание и характеристики устройства</a>
@@ -51,25 +50,24 @@
     <br>
          
       <div id="photos">
-        <img src="https://thumbs2.tunefiles.com/98,0317957af6b7dc3d.jpg">
-        <img src="https://pp.userapi.com/c849320/v849320768/fca10/_cwMBfrz8Xg.jpg">
-        <img src="https://bipbap.ru/wp-content/uploads/2017/12/0f92147ad2284aae418b40faf24dc68902960019_hq-640x456.jpg">
-        <img src="https://st2.depositphotos.com/4256003/9442/i/950/depositphotos_94426252-stock-photo-gentle-portrait-tiger-computer-collage.jpg">
-        <img src="https://i.ytimg.com/vi/Z_zd0sinCw8/maxresdefault.jpg"> 
-     
+        <img src="./images/15.jpg" alt="Здесь должна быть фотография теплицы">
+        <img src="./images/10.jpg" alt="И здесь тоже">
+        <img src="./images/12.jpg" alt="И здесь">
+        <img src="./images/17.jpg" alt="И здесь">
+        <img src="./images/19.jpg" alt="И здесь">
       </div>
          
       <div id="buttonsForSlider">
         <input type="button" value="Назад" id="prev" class="btn_prev_left"> 
-        <input type="image" src="https://thumbs2.tunefiles.com/98,0317957af6b7dc3d.jpg" 
+        <input type="image" src="./images/15.jpg" 
         width=50px height=40px data-name="0" value="рис 1" class="buttons">
-        <input type="image" src="https://pp.userapi.com/c849320/v849320768/fca10/_cwMBfrz8Xg.jpg" 
+        <input type="image" src="./images/10.jpg" 
         width=50px height=40px data-name="1" value="рис 2" class="buttons">
-        <input type="image" src="https://bipbap.ru/wp-content/uploads/2017/12/0f92147ad2284aae418b40faf24dc68902960019_hq-640x456.jpg" 
+        <input type="image" src="./images/12.jpg" 
         width=50px height=40px data-name="2" value="рис 3" class="buttons">
-        <input type="image" src="https://st2.depositphotos.com/4256003/9442/i/950/depositphotos_94426252-stock-photo-gentle-portrait-tiger-computer-collage.jpg" 
+        <input type="image" src="./images/17.jpg" 
         width=50px height=40px data-name="3" value="рис 4" class="buttons"> 
-        <input type="image" src="https://i.ytimg.com/vi/Z_zd0sinCw8/maxresdefault.jpg" 
+        <input type="image" src="./images/19.jpg" 
         width=50px height=40px data-name="4" value="рис 5" class="buttons">
         <input type="button" value="Вперед" id="next" class="btn_next_right">
       </div> 
@@ -79,8 +77,48 @@
   
   <div class="major_c">
     <h2 id="Opisanie">Описание и технические характеристики GreenHouse:</h2>
-      <p></p>
-      <p></p>
+      <p><strong>Описание устройства:</strong></p>
+        <ol>
+          <li><u>Конструкция теплицы и ёмкость для воды</u></li>
+            <ul>
+              <li>Корпус теплицы выполнен из бутылки, объёмом 19,8 литра, из-под кулера</li>
+              <li>Стойки, благодаря которым теплица стоит в неподвижном состоянии, а также стойки на которые будет крепится блок управления, изготовлены из листа фанеры и имеюь форму дугидля лучшего контакта с бутылкой</li>
+              <li>Заглушка для горла бутылки сделана из пенопласта, и в ней есть отверстие под поливной шланг </li>
+              <li>Форточка реализована с помощью петли, а также несложного рычага открывания, управляемого сервоприводом</li>
+              <li>Внутренняя подсветка, представленная в виде светодиодной ленты, держится с помощью специальных креплений, приклеенных на термоклей </li>
+              <li>Внутри теплицы вставлены датчики влажности почвы и датчик температуры и влажности почвы модели DHT 22</li>
+              <li>Снаружи, в районе горловины бутылки, прикреплена, с помощью металлических стяжек, бутыль с водой</li>
+              <li>В бутыль с водой помещён насос</li>
+              <li>Все провода проведены к блоку управления через специальные отверстие</li>
+              <li>Сама теплица будет имеет два режима работы: ручной и автоматический</li>
+            </ul>
+          <li><u>Блок управления</u></li> 
+            <ul>
+              <li>Блок управления будет выполнен из пластикового контейнера со съёмной крышкой</li>
+              <li>В блоке управления будут находиться следующие компоненты: микроконтроллер WeMos D1 R1, 4-ёх канальный модуль реле, блок питания. </li>
+              <li>Один из блоков питания будет приклеен к стенке контейнера на термоклей для болшей жёсткости</li>
+              <li>Скетч для WeMos написан на языке программирования C++</li>
+              <li>Модуль реле будет передавать ток высокого напряжения на насос и светодиодную ленту, выступая в роле управляемого переходника </li>
+              <li>С наружной части будет выведен сервопривод с рычагом для открытия форточки</li>
+              <li>К блоку управления будут вести провода от датчиков, сервопривода, насоса и ленты</li>
+            </ul>
+          <li><u>Сайт</u></li>
+            <ul>
+              <li>Сайт будет написан на языке HTML 5 и стилизован с помощью CSS 3</li>
+              <li>Логика сайта будет запрограммирована на языке JavaScript</li>
+              <li>Сайт будет иметь оформление, дизайн, а так же краткое текстовое описание устройства с картинками</li>
+              <li>Сайт сможет подключаться к MQTT, отправлять и получать запросы к теплице</li>
+              <li>На сайте будут кнопки, позволяющие управлять устройством</li>
+              <li>На сайт будут выводиться данные о текущем состоянии теплицы</li>
+              <li>С сайта можно будет менять настройки автоматического режима работы теплицы</li>
+            </ul>
+        </ol> 
+       
+      <p><strong>Технические характеристики</strong></p> 
+       <ul>
+         <li>Питается теплица от двух блоков питания, мощностью 4.5 Вт и 12 Вт</li>
+         <li>Мощность светодиодной ленты составляет 12 Вт</li>
+       </ul> 
   </div>
   
   <div class="major_c">
@@ -101,7 +139,7 @@
     <h3 id="connection">Состояние подключения: НЕ ПОДКЛЮЧЕНО</h3>
     <br>
     <div id="sost">
-      <h3>Текущее состояние оранжереи:</h3>
+      <h3>Текущее состояние теплицы:</h3>
       <div id="flexSost">
         <div id="lefter">  
           <div>Режим управления:</div>
@@ -146,7 +184,8 @@
     <button id="send_btn" type="button" class="btn btn-success">Отправить новые данные</button> <br>
   </div>
 
-  <div class="major_c">
+  <!-- Блок со статистикой пока в разработке
+    <div class="major_c">
     <h3 id="State">Статистика</h3> 
     <br>
     <div id="grafic">
@@ -161,12 +200,7 @@
       <div class="temper">9</div>
       <div class="temper">10</div>
     </div>
-  </div>
-
-<!-- <input id="range" type="range" value="1" step="1" min="1" max="50" list="rangeList" onchange="document.getElementById('rangeValue').innerHTML = this.value;">
-<datalist id="rangeList">
-</datalist>
-<span id="rangeValue">1</span> -->
+  </div> -->
  
 </div>
 <footer id="footer">
@@ -176,6 +210,6 @@
 </html>
 <!--Подключение скриптов:-->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js'></script>
-  <script src="./script.js"></script>
+  <script src="./scripts/script.js"></script>
 </body>
 </html>
