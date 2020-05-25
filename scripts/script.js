@@ -138,13 +138,13 @@ avalControl = parseInt(avalControl.value, 10);
 tempControlHigh = parseInt(tempControlHigh.value, 10);
 tempControlLow = parseInt(tempControlLow.value, 10);
 console.log("Данные обабатываются...");  
-if (avalControl != 0)  {
+if (avalControl != "")  {
 Send("humMin", avalControl);
 avalControl == 0;}
-if (tempControlHigh != 0)  {
+if (tempControlHigh != "")  {
 Send("tempHigh", tempControlHigh);
 tempControlHigh = 0;} 
-if (tempControlLow != 0)  {
+if (tempControlLow != "")  {
 Send("tempLow", tempControlLow);
 tempControlLow = 0;}  
 console.log("Данные отправлены");
@@ -203,11 +203,20 @@ function onMessageArrived(message) {
 //     temper[i].style.height = nul[i] + 'px';
 //    }
         // break;
+      function avalTransform(aval){
+        if (aval > 900) aval = 500/((aval - 500)/5)
+        else aval = 60000/aval
+        aval = aval.toFixed(2);
+        if (aval>100) aval = 100;
+        if (aval<1) avalMessage = 0;
+        return aval;
+      }  
         
       case "avalue":
         if (message.payloadString != "info"){
-          aval.innerHTML= message.payloadString;
-          console.log("Влажность почвы: " + message.payloadString)}
+          let avalMessage = avalTransform(message.payloadString);
+          aval.innerHTML= avalMessage + "%";
+          console.log("Влажность почвы: " + avalMessage)}
         break;
         
       case "infoT":
@@ -225,32 +234,32 @@ function onMessageArrived(message) {
       case "answer":
         switch (message.payloadString) {
           case "okno_open":
-            oknoSost.innerHTML= "Открыто";
+            oknoSost.innerHTML= " Открыто";
             console.log(message.payloadString)
             break; 
         
           case "okno_close":
-            oknoSost.innerHTML= "Закрыто";
+            oknoSost.innerHTML= " Закрыто";
             console.log(message.payloadString)
             break; 
 
           case "svet_on":
-            svetSost.innerHTML= "Включено";
+            svetSost.innerHTML= " Включено";
             console.log(message.payloadString)
             break; 
         
           case "svet_off":
-            svetSost.innerHTML= "Выключено";
+            svetSost.innerHTML= " Выключено";
             console.log(message.payloadString)
             break;
 
           case "pompa_on":
-            polivSost.innerHTML= "Включено";
+            polivSost.innerHTML= " Включено";
             console.log(message.payloadString)
             break; 
         
           case "pompa_off":
-            polivSost.innerHTML= "Выключено";
+            polivSost.innerHTML= " Выключено";
             console.log(message.payloadString)
             break;
 
