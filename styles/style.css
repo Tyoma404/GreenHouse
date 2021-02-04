@@ -74,6 +74,10 @@ p {
  border: 1px solid black; 
 }
 
+#luxInputLow{
+  border: 1px solid black; 
+ }
+
 #flexSost{
   display: flex; 
 /* flex-direction: column;  */

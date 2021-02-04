@@ -146,6 +146,7 @@
           <div>Влажность почвы:</div>
           <div>Температура воздуха:</div>
           <div>Влажность воздуха:</div>
+          <div>Уровень освещнности:</div>
           <div>Состояние полива:</div>
           <div>Состояние подсветки:</div>
           <div>Положение окна:</div>
@@ -154,7 +155,8 @@
           <div id="regim">auto </div>
           <div id="aval">-Не определенно- </div>
           <div id="temp">-Не определенно-</div>
-          <div id="hum">-Не определенно- </div>  
+          <div id="hum">-Не определенно- </div> 
+          <div id="lux">-Не определенно- </div> 
           <div id="polivSost">-Не определенно- </div>    
           <div id="svetSost">-Не определенно- </div> 
           <div id="oknoSost">-Не определенно- </div> 
@@ -167,20 +169,26 @@
     <div class="input-group-prepend">
       <span class="input-group-text" id="inputGroup-sizing-default">Нижний барьер влажности почвы</span>
     </div>
-    <input type="text" class="form-control" aria-label="Default" placeholder="Введите число от 1 до 1024" aria-describedby="inputGroup-sizing-default" id="avalControl">
+    <input type="text" class="form-control" aria-label="Default" placeholder="Введите значение от 1 до 1024" aria-describedby="inputGroup-sizing-default" id="avalControl">
     </div>
     <div id="tempInputHigh" class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">Верхний барьер температуры воздуха</span>
       </div>
-        <input type="text" class="form-control" aria-label="Default" placeholder="Введите число градусов Цельсия" aria-describedby="inputGroup-sizing-default" id="tempControlHigh">
+        <input type="text" class="form-control" aria-label="Default" placeholder="Введите значение градусов Цельсия" aria-describedby="inputGroup-sizing-default" id="tempControlHigh">
     </div>
     <div id="tempInputLow" class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="inputGroup-sizing-default">Нижний барьер температуры воздуха</span>
       </div>
-        <input type="text" class="form-control" aria-label="Default" placeholder="Введите число градусов Цельсия" aria-describedby="inputGroup-sizing-default" id="tempControlLow">
+        <input type="text" class="form-control" aria-label="Default" placeholder="Введите значение градусов Цельсия" aria-describedby="inputGroup-sizing-default" id="tempControlLow">
     </div>  
+    <div id="luxInputLow" class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Нижний барьер освещенности</span>
+      </div>
+        <input type="text" class="form-control" aria-label="Default" placeholder="Введите значение люминов (от 50 до 350)" aria-describedby="inputGroup-sizing-default" id="luxControlLow">
+    </div> 
     <button id="send_btn" type="button" class="btn btn-success">Отправить новые данные</button> <br>
   </div>
 

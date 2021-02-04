@@ -37,6 +37,7 @@ var options = {
 var avalControl = document.querySelector("#avalControl")
 var tempControlHigh = document.querySelector("#tempControlHigh")
 var tempControlLow = document.querySelector("#tempControlLow")
+var luxControlLow = document.querySelector("#luxControlLow")
 var connect_btn = document.querySelector("#connect_btn")
 var connection = document.querySelector("#connection")
 var poliv_btn = document.querySelector("#poliv_btn")
@@ -50,6 +51,7 @@ var aval = document.querySelector("#aval")
 var regim = document.querySelector("#regim")
 var temp = document.querySelector("#temp")
 var hum = document.querySelector("#hum")
+var lux = document.querySelector("#lux")
 var polivSost = document.querySelector("#polivSost")
 var svetSost = document.querySelector("#svetSost")
 var oknoSost = document.querySelector("#oknoSost")
@@ -137,6 +139,7 @@ send_btn.addEventListener("click", () =>{
 avalControl = parseInt(avalControl.value, 10); 
 tempControlHigh = parseInt(tempControlHigh.value, 10);
 tempControlLow = parseInt(tempControlLow.value, 10);
+luxControlLow = parseInt(luxControlLow.value, 10);
 console.log("Данные обабатываются...");  
 if (avalControl != "")  {
 Send("humMin", avalControl);
@@ -146,7 +149,10 @@ Send("tempHigh", tempControlHigh);
 tempControlHigh = 0;} 
 if (tempControlLow != "")  {
 Send("tempLow", tempControlLow);
-tempControlLow = 0;}  
+tempControlLow = 0;} 
+if (luxControlLow != "")  {
+  Send("luxLow", tempControlLow);
+  tempControlLow = 0;}  
 console.log("Данные отправлены");
 });
 
@@ -160,8 +166,10 @@ function onConnect() {
   client.subscribe("humMin");
   client.subscribe("tempHigh");
   client.subscribe("tempLow");
+  client.subscribe("luxLow");
   client.subscribe("infoH"); 
   client.subscribe("infoT");
+  client.subscribe("infoL");
   client.subscribe("answer");   
   client.subscribe("avalue");
   client.subscribe("/feeder");
@@ -230,6 +238,12 @@ function onMessageArrived(message) {
           hum.innerHTML= message.payloadString + "%";
           console.log("Влажность воздуха" + message.payloadString)}
         break; 
+
+       case "infoL":
+        if (message.payloadString != "info"){ 
+          lux.innerHTML= message.payloadString + " lux";
+          console.log("Уровень освещенности" + message.payloadString)}
+        break;  
         
       case "answer":
         switch (message.payloadString) {
