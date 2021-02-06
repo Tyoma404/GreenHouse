@@ -104,15 +104,7 @@ p {
   border: 3px solid black;
 }
 
-#avalInput{
-   width: 650px;
-}
-
-#tempInputHigh{
-   width: 650px;
-}
-
-#tempInputLow{
+#tempInputHigh, #tempInputLow, #avalInput, #luxInputLow{
    width: 650px;
 }
 

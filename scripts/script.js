@@ -45,6 +45,7 @@ var send_btn = document.querySelector("#send_btn")
 var m_btn = document.querySelector("#m_btn")
 var avalue_btn = document.querySelector("#avalue_btn")
 var dht_btn = document.querySelector("#dht_btn")
+var lux_btn = document.querySelector("#lux_btn")
 var window_btn = document.querySelector("#window_btn")
 var light_btn = document.querySelector("#light_btn")
 var aval = document.querySelector("#aval")
@@ -122,6 +123,11 @@ avalue_btn.addEventListener("click", () =>{
   Send("avalue", "info");
   console.log("Запрос на влажность почвы отправили");
   // timer(); 
+});
+
+lux_btn.addEventListener("click", () =>{
+  Send("infoL", "info");
+  console.log("Запрос на освещенность отправили");
 });
 
 dht_btn.addEventListener("click", () =>{
