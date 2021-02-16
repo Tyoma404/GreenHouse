@@ -142,22 +142,30 @@ dht_btn.addEventListener("click", () =>{
 });
 
 send_btn.addEventListener("click", () =>{
-avalControl = parseInt(avalControl.value, 10); 
-tempControlHigh = parseInt(tempControlHigh.value, 10);
-tempControlLow = parseInt(tempControlLow.value, 10);
-luxControlLow = parseInt(luxControlLow.value, 10);
-console.log("Данные обабатываются...");  
-if (avalControl != "")  {
+avalControl = avalTransform(avalControl.value).toString(); 
+tempControlHigh = tempControlHigh.value;
+tempControlLow = tempControlLow.value;
+luxControlLow = luxControlLow.value;
+console.log("Данные обрабатываются...");  
+
+if (avalControl && avalControl!="")  {
+console.log("Отправляю влажность почвы");  
 Send("humMin", avalControl);
 avalControl == 0;}
-if (tempControlHigh != "")  {
+
+if (tempControlHigh && tempControlHigh!= "")  {
+console.log("Отправляю вверх температуры");  
 Send("tempHigh", tempControlHigh);
 tempControlHigh = 0;} 
-if (tempControlLow != "")  {
+
+if (tempControlLow && tempControlLow!="")  {
+console.log("Отправляю низ температуры");  
 Send("tempLow", tempControlLow);
-tempControlLow = 0;} 
-if (luxControlLow != "")  {
-  Send("luxLow", tempControlLow);
+tempControlLow = 0;}
+
+if (luxControlLow && luxControlLow!="")  {
+  console.log("Отправляю освещенность"); 
+  Send("luxLow", luxControlLow);
   tempControlLow = 0;}  
 console.log("Данные отправлены");
 });
@@ -218,11 +226,9 @@ function onMessageArrived(message) {
 //    }
         // break;
       function avalTransform(aval){
-        if (aval > 900) aval = 500/((aval - 500)/5)
-        else aval = 60000/aval
+        aval = (1024 - parseInt(aval,10))*100/(1024-300)
         aval = aval.toFixed(2);
-        if (aval>100) aval = 100;
-        if (aval<1) avalMessage = 0;
+        if(aval>100) aval=100.00;
         return aval;
       }  
         
