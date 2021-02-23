@@ -226,7 +226,7 @@ function onMessageArrived(message) {
 //    }
         // break;
       function avalTransform(aval){
-        aval = (1024 - parseInt(aval,10))*100/(1024-300)
+        aval = (1024 - parseInt(aval,10))*100/(1024-100)
         aval = aval.toFixed(2);
         if(aval>100) aval=100.00;
         return aval;
@@ -242,19 +242,19 @@ function onMessageArrived(message) {
       case "infoT":
         if (message.payloadString != "info"){ 
           temp.innerHTML= message.payloadString + "°С";
-          console.log("Температура воздуха" + message.payloadString)}
+          console.log("Температура воздуха " + message.payloadString)}
         break; 
         
       case "infoH":
         if (message.payloadString != "info"){ 
           hum.innerHTML= message.payloadString + "%";
-          console.log("Влажность воздуха" + message.payloadString)}
+          console.log("Влажность воздуха " + message.payloadString)}
         break; 
 
        case "infoL":
         if (message.payloadString != "info"){ 
           lux.innerHTML= message.payloadString + " lux";
-          console.log("Уровень освещенности" + message.payloadString)}
+          console.log("Уровень освещенности " + message.payloadString)}
         break;  
         
       case "answer":
